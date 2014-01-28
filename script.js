@@ -22,10 +22,10 @@ $(document).ready(function() {
 		}
 	});
 
+	var timers = [];
 	function startTimer() {
 		//get all the timers and put their information in an array
 		var timeSet = $('.time-set');
-		var timers = [];
 		for (var i = 0; i < timeSet.length; i++) {
 			var prompt = timeSet.eq(i).find('.time-prompt').text();
 			var amount = timeSet.eq(i).find('.time-entry').find('span').text();
@@ -41,14 +41,44 @@ $(document).ready(function() {
 			if /* still */ (!$.isNumeric(amount) || amount <= 0) {
 				smartAssLoop();
 			}
-			timers.push([prompt, amount]);
-		};
-		// console.log(timers);
 
-		
+			//store the information in the array
+			timers.push([prompt, amount]);
+	
+			// add divs for each timer and start a timeout
+			var timer = $('<div/>', { class: 'timer' });
+
+			if (i === 0) {
+				//this is the first timer
+				timer.addClass('running');
+			} else {
+				//these are the rest of them 
+				timer.addClass('waiting');
+			}
+
+			$('#timer').append(timer);
+
+			var thePrompt = $('<p/>', {
+				text: prompt
+			});
+			timer.append(thePrompt);
+			timer.append('<div class="progress"></div>');
+			console.log('happiness all around');
+		}
+		// console.log(timers.length);
+		$('#timer').fadeIn(300);
 	}
 
-	smartAssLoop() {
+	function animateTimer() {
+		for (var j = 0; j < timers.length; j++) {
+			$('.progress').eq(j).animate({
+				'right': '100%'
+			}, 2000);
+		}
+
+	}
+
+	function smartAssLoop() {
 		//some one is trying to trick us, Schmeagel!
 		//no one trickes us, Precious
 		do {
@@ -59,10 +89,12 @@ $(document).ready(function() {
 
 	$('.control').click(function() {
 		startTimer();
-		console.log('we clicked the start button');
+		animateTimer();
+
 		// if $(this).hasClass('non-init') {
 
 		// }
+
 	});
 
 });

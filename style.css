@@ -129,7 +129,37 @@ p, span {	font-family: 'Source Sans Pro', sans-serif; color: #333; line-height: 
 .non-init, .paused { background: green; }
 .playing { background: red; }
 
-.timer {}
+#timer {
+	display: none;
+}
+
+.timer {
+	width: 100%;
+	background: #cacaca;
+	position: relative;
+	z-index: 0;
+}
+
+.timer p {
+	padding: 0.5em 2%;
+}
+
+.progress {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -10;
+}
+
+.waiting .progress {
+	background: #d1d1d1;
+}
+
+.running .progress {
+	background: mediumseagreen;
+}
 
 
 
