@@ -70,12 +70,25 @@ $(document).ready(function() {
 	}
 
 	function animateTimer() {
-		for (var j = 0; j < timers.length; j++) {
-			$('.progress').eq(j).animate({
-				'right': '100%'
-			}, 2000);
-		}
+		//for (var j = 0; j < timers.length; j++) {
+		//	$('.progress').eq(j).animate({
+		//		'right': '100%'
+		//	}, 2000);
+		//}
+		
 
+		//set up a loop that hopefully begins individually
+		var counter = 0;
+		var limit = timers.length;
+		var timeInt = timers[counter][1];
+		var interval;
+
+		//interval = setInterval(animate, timeInt);
+		
+
+		function animate() {
+			
+		}
 	}
 
 	function smartAssLoop() {
