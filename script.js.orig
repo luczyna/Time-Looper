@@ -67,9 +67,11 @@ $(document).ready(function() {
 		}
 		// console.log(timers.length);
 		$('#timer').fadeIn(300);
+		// $('.timer-setup').addClass('hideTheSetUp');
 	}
 
 	function animateTimer() {
+<<<<<<< HEAD
 		//this is our counter for looping through the animation
 		var counter = 0;
 
@@ -107,6 +109,31 @@ $(document).ready(function() {
 				console.log('this should happen after some time');
 				counter++;
 			});
+		}
+
+		function increase() {
+			counter++;
+			console.log('okay');
+=======
+		//for (var j = 0; j < timers.length; j++) {
+		//	$('.progress').eq(j).animate({
+		//		'right': '100%'
+		//	}, 2000);
+		//}
+		
+
+		//set up a loop that hopefully begins individually
+		var counter = 0;
+		var limit = timers.length;
+		var timeInt = timers[counter][1];
+		var interval;
+
+		//interval = setInterval(animate, timeInt);
+		
+
+		function animate() {
+			
+>>>>>>> 36d7f5c9380626d0b6243be0b2821ee1e3f1a6dd
 		}
 	}
 
