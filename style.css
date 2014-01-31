@@ -46,11 +46,23 @@ p, span {	font-family: 'Source Sans Pro', sans-serif; color: #333; line-height: 
 
 .timer-setup {
 	width: 60%;
+	height: auto;
 	margin: 0 auto 1.4em;
 	padding: 0.5em 5%;
 	border-left: 3px #cacaca solid;
 	border-right: 3px #cacaca solid;
+	-o-transition: all 0.3s ease-in;
+	-ms-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-webkit-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
 }
+
+.hideTheSetUp {
+	height: 1em;
+	overflow-y: hidden;
+}
+
 .instruction {
 	margin: 0 0 1.4em;
 	text-align: center;

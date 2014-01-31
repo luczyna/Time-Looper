@@ -44,7 +44,7 @@ $(document).ready(function() {
 
 			//store the information in the array
 			timers.push([prompt, amount]);
-	
+
 			// add divs for each timer and start a timeout
 			var timer = $('<div/>', { class: 'timer' });
 
@@ -67,13 +67,52 @@ $(document).ready(function() {
 		}
 		// console.log(timers.length);
 		$('#timer').fadeIn(300);
+		// $('.timer-setup').addClass('hideTheSetUp');
 	}
 
 	function animateTimer() {
-		for (var j = 0; j < timers.length; j++) {
-			$('.progress').eq(j).animate({
+		//this is our counter for looping through the animation
+		var counter = 0;
+
+		//this is the amount of times we should loop
+		var limit = timers.length;
+
+		// do {
+		// 	// gamBaTae();
+		// 	// console.log('okay, testing');
+		// 	// counter++;
+
+		// 	var timeLength = timers[counter][1] * 1000;
+
+		// 	$('.progress').eq(counter).animate({
+		// 		'right': '100%'
+		// 	}, timeLength, 'linear', increase);
+		// } while ( counter < limit );
+
+		// function gamBaTae() {
+		// 	//what time do we need to do
+		// 		//for the time being turn it into seconds with (* 1000)
+		// 	var timeLength = timers[counter][1] * 1000;
+
+		// $('.progress').eq(counter).animate({
+		// 		'right': '100%'
+		// 	}, timeLength, 'linear', function() {
+		// 		console.log('this should happen after some time');
+		// 		counter++;
+		// 	});
+		// }
+
+		$('.progress').eq(counter).animate({
 				'right': '100%'
-			}, 2000);
+			}, timeLength, 'linear', function() {
+				console.log('this should happen after some time');
+				counter++;
+			});
+		}
+
+		function increase() {
+			counter++;
+			console.log('okay');
 		}
 
 	}
@@ -89,7 +128,7 @@ $(document).ready(function() {
 
 	$('.control').click(function() {
 		startTimer();
-		animateTimer();
+		// animateTimer();
 
 		// if $(this).hasClass('non-init') {
 
