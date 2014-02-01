@@ -75,39 +75,44 @@ $(document).ready(function() {
 
 		//this is the amount of times we should loop
 		var limit = timers.length;
+		// console.log(limit);
 
-		// do {
-		// 	// gamBaTae();
-		// 	// console.log('okay, testing');
-		// 	// counter++;
+		//we're turning things into seconds for the testing
+		var timeLime = 1000;
 
-		// 	var timeLength = timers[counter][1] * 1000;
+		//this is our looping variable
+		var timeInt;
 
-		// 	$('.progress').eq(counter).animate({
-		// 		'right': '100%'
-		// 	}, timeLength, 'linear', increase);
-		// } while ( counter < limit );
+		// console.log(timeLime);
+		timeInt = window.setInterval(countDown, timeLime);
+		function countDown() {
 
-		// function gamBaTae() {
-		// 	//what time do we need to do
-		// 		//for the time being turn it into seconds with (* 1000)
-		// 	var timeLength = timers[counter][1] * 1000;
-
-		// $('.progress').eq(counter).animate({
-		// 		'right': '100%'
-		// 	}, timeLength, 'linear', function() {
-		// 		console.log('this should happen after some time');
-		// 		counter++;
-		// 	});
-		// }
-
-		$('.progress').eq(counter).animate({
-				'right': '100%'
-			}, timeLength, 'linear', function() {
-				console.log('this should happen after some time');
+			if (counter === 0) {
 				counter++;
-			});
+				timeLime = timers[(counter - 1)][1] * 1000;
+			} else if ((counter - 1) == limit) {
+				clearInterval(timeInt);
+				// return false;
+			} else {
+
+				$('.progress').eq((counter - 1)).animate({
+						'right': '100%'
+					}, timeLime, 'linear', function() {
+						counter++;
+					});
+
+				console.log('waiting to see all of the counter go down');
+			}
+
 		}
+
+		// function repeat(fn, times) {
+		// 	for(var i = 0; i < times; i++) fn();
+		// 	}
+
+		// 	repeat(doSomething, xTcount);
+		// 	// ...later...
+		// 	repeat(doSomethingElse, xTcount);
 	}
 
 	function smartAssLoop() {
@@ -121,13 +126,14 @@ $(document).ready(function() {
 
 	$('.control').click(function() {
 		startTimer();
-		// animateTimer();
+		animateTimer();
 
 		// if $(this).hasClass('non-init') {
 
 		// }
 
 	});
+
 
 });
 })(jQuery);

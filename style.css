@@ -166,7 +166,7 @@ p, span {	font-family: 'Source Sans Pro', sans-serif; color: #333; line-height: 
 }
 
 .waiting .progress {
-	background: #d1d1d1;
+	background: tomato;
 }
 
 .running .progress {
