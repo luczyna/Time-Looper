@@ -9,35 +9,29 @@
 <body>
 	
 	<div class="container">
-		<div id="prompt">
-			<h1>Hi there.</h1>
-			<p>You can use this tool to start a reoccuring timer for yourself. It can be helpful to remind yourself to take breaks at work every hour, for instance.</p>
-		</div>
+		<div class="time-wrapper">
+			<div class="time-settings">
+				<!-- color settings
+					 export settings?
+					 save to browser settings?
+					-->
+			</div>
 
-		<div class="timer-setup">
-			<p class="instruction">add timers to your timer set</p>
-
-			<ul>
-				<li class="time-set clearfix">
-					<p class="time-prompt" contenteditable>What is your prompt?</p>
-					<p class="time-entry"><span contenteditable>2</span> &nbsp;min</p>
-					<span class="time-delete"> &times; </span>
+			<ul id="time-collection">
+				<li class="time-item" data-order="1">
+					<span class="time-name" contenteditable="true">name your timer</span>
+					<span class="time-amount" contenteditable="true">1</span>
+					<span class="time-unit">minute(s)</span>
+					<span class="time-delete">&times;</span>
+					<span class="time-repeat">&amp; &amp;</span>
 				</li>
 			</ul>
-
-			<p class="add-more" id="addMore"> + add another timer </p>
-
-			<p class="control non-init">start</p>
 		</div>
 
-		<div id="timer">
-			<!-- timer stuff will go here -->
-		</div>
+		<div class="picture-feed"
 	</div>
 
 	<!--	scripts 	-->
-	<script src="jquery-1.7.1.min.js" type="text/javascript"></script>
-	<script src="mousetrap.min.js" type="text/javascript"></script>
 	<script src="script.js" type="text/javascript"></script>
 </body>
 </html>
