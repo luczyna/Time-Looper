@@ -30,10 +30,40 @@ p, span {	font-family: 'Source Sans Pro', sans-serif; color: #333; line-height: 
 
 
 .container { 
-	width: 90%;
+	width: 95%;
 	max-width: 60em;
 	margin: 0 auto;
 	padding: 3em 0 0;
+}
+
+#time-collection {
+	list-style: none;
+}
+.time-item {
+	padding: 1em 2em;
+	margin: 0 auto 1em;
+	position: relative;
+}
+.normal {
+	background: tomato;
+}
+.time-name {}
+.time-amount {
+	float: right;
+}
+.time-delete, .time-repeat {
+	position: absolute;
+	color: white;
+}
+.time-delete {
+	background: red;
+	top: 0.5em;
+	right: -0.5em;
+}
+.time-repeat {
+	background: green;
+	top: 1.5em;
+	right: -0.5em;
 }
 
 
